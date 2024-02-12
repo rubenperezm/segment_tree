@@ -17,6 +17,10 @@ class SegmentTree:
         self.array = array
         if type(operations) != list:
             raise TypeError("operations must be a list")
+        if len(operations) == 0:
+            raise ValueError("operations list must not be empty")
+        if len(array) == 0:
+            raise ValueError("array must not be empty")
         self.operations = {}
         for op in operations:
             self.operations[op.name] = op

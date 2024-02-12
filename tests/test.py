@@ -85,3 +85,23 @@ class TestSegmentTree(TestCase):
             self.assertEqual(t.query(l, r, "min"), test_t.query(l, r, "min"))
             self.assertEqual(t.query(l, r, "max"), test_t.query(l, r, "max"))
             self.assertEqual(t.query(l, r, "sum"), test_t.query(l, r, "sum"))
+
+    def test_operations_type(self):
+        """
+        Tests a basic implementation of the segment tree with an empty list of operations.
+        """
+        self.assertRaises(TypeError, SegmentTree, [1], 1)
+
+    def test_empty_array(self):
+        """
+        Tests a basic implementation of an empty segment tree.
+        """
+        self.assertRaises(ValueError, SegmentTree, [])
+
+    
+    def test_empty_operations(self):
+        """
+        Tests a basic implementation of the segment tree with empty operations.
+        """
+        self.assertRaises(ValueError, SegmentTree, [1], [])
+
